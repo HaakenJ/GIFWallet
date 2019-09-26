@@ -1,0 +1,30 @@
+When the page loads, buttons are generated from an array of names
+
+When a button is clicked, an ajax call will populate the page
+    with 10 gifs related to that button's search term
+
+All the GIFs are stopped when they show up
+When you click a GIF it will play
+Each gif has its rating and other info displayed above it.
+Each gif has a save button
+
+There is an Add option on the right
+    This has an input field and a submit button
+    When you type something into the input field and click 'submit'
+        A button will be added to the buttons array and will show up
+        on the page to be used.
+
+There are 'Sign Up' and 'Login' buttons in the top right.
+
+When you sign up you add a username and password which is stored via cookies
+    or localstorage.
+
+You can then Login using the username and password and you are remembered
+
+When you click 'save' next to a gif, the gif is saved to your user profile.
+
+When you are logged in, a 'Saved Gifs' button is in the top right where the 
+    login and sign up buttons used to be.  
+
+When you click 'Saved Gifs' all of your previously saved GIFs are loaded onto 
+    the screen.
