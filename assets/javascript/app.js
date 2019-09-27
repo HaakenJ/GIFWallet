@@ -1,3 +1,10 @@
+/* TODO: Add functionality to the 'add a button' button.
+    - Figure out how to remember users and create a user's gif page.
+    - Figure out how to select multiple buttons to combine search terms
+    - Add drop down for number of results and rating
+    - List the gif's rating at the top of each gif */
+
+
 $(document).ready(() => {
 
     var animals = ['dog', 'cat', 'rabbit', 'hamster', 'badger', 'dolphin', 'whale', 'platypus', 'kangaroo', 'wolverine', 'pig', 'horse', 'cow', 'snake'],
