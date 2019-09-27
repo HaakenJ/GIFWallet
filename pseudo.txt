@@ -5,6 +5,14 @@ When a button is clicked, an ajax call will populate the page
 
 All the GIFs are stopped when they show up
 When you click a GIF it will play
+    When the gif is added to the page, the original still version is used 
+        and a flag isPlaying is set to false.
+    When the user clicks a gif and isPlaying === false, the image is changed
+        to original
+    if the user clicks a gif and isPlay === true, the image is changed to   
+        original_still
+
+
 Each gif has its rating and other info displayed above it.
 Each gif has a save button
 
