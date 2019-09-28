@@ -7,9 +7,9 @@
 
 $(document).ready(() => {
 
-    var animals = ['dog', 'cat', 'rabbit', 'hamster', 'badger', 'dolphin', 'whale', 'platypus', 'kangaroo', 'wolverine', 'pig', 'horse', 'cow', 'snake'],
-        emotions = ['happy', 'funny', 'sad', 'angry', 'offended', 'bored', 'awkward', 'confused', 'excited', 'frustrated', 'hungry', 'tired', 'disappointed', 'embarrassed', 'scared', 'shocked', 'surprised', 'nervous'],
-        sports = ['baseball', 'football', 'basketball', 'hockey', 'soccer', 'cricket', 'rugby', 'rock climbing', 'snowboarding', 'skiing', 'skateboarding', 'wakeboarding', 'e-sports'],
+    var animal = ['dog', 'cat', 'rabbit', 'hamster', 'badger', 'dolphin', 'whale', 'platypus', 'kangaroo', 'wolverine', 'pig', 'horse', 'cow', 'snake'],
+        emotion = ['happy', 'funny', 'sad', 'angry', 'offended', 'bored', 'awkward', 'confused', 'excited', 'frustrated', 'hungry', 'tired', 'disappointed', 'embarrassed', 'scared', 'shocked', 'surprised', 'nervous'],
+        sport = ['baseball', 'football', 'basketball', 'hockey', 'soccer', 'cricket', 'rugby', 'rock climbing', 'snowboarding', 'skiing', 'skateboarding', 'wakeboarding', 'e-sports'],
         apiKey = 'ARmBnNtTextf5564MTzhpY9zyTYN6Pde',
         numOfResults = 10,
         rating = 'g',
@@ -28,23 +28,22 @@ $(document).ready(() => {
         }
     }
 
-    animals.forEach((item) => {
-        var newBtn = $('<button>');
+    function newButton(category, term) {
+        var newBtn = $('<button>'),
+            newCat = ('#' + category + '-buttons');
         newBtn.attr('class', 'btn btn-info m-1 query-button');
-        newBtn.text(item);
-        $('#animal-buttons').prepend(newBtn);
+        newBtn.text(term);
+        $(newCat).append(newBtn);
+    }
+
+    animal.forEach((item) => {
+        newButton('animal', item);
     })
-    emotions.forEach((item) => {
-        var newBtn = $('<button>');
-        newBtn.attr('class', 'btn btn-info m-1 query-button');
-        newBtn.text(item);
-        $('#emotion-buttons').prepend(newBtn);
+    emotion.forEach((item) => {
+        newButton('emotion', item);
     })
-    sports.forEach((item) => {
-        var newBtn = $('<button>');
-        newBtn.attr('class', 'btn btn-info m-1 query-button');
-        newBtn.text(item);
-        $('#sport-buttons').prepend(newBtn);
+    sport.forEach((item) => {
+        newButton('sport', item);
     })
 
     $('.query-button').on('click', function () {
@@ -56,7 +55,7 @@ $(document).ready(() => {
             method: 'GET'
         }).then((response) => {
             response.data.forEach((item) => {
-                
+
                 var newGif = $('<img>');
                 newGif.attr({
                     'src': item.images.fixed_height_still.url,
@@ -69,5 +68,14 @@ $(document).ready(() => {
             })
         })
     })
+
     $('.container').on('click', '.new-gif', playAndPause);
+
+    $('#submit').on('click', function() {
+        console.log('clicked');
+        var newTerm = $('#new-button').val,
+            newCat = $('#new-category').text();
+        console.log(newTerm, newCat);
+        newButton(newCat, newTerm);
+    })
 })
