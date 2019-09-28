@@ -73,8 +73,8 @@ $(document).ready(() => {
 
     $('#submit').on('click', function() {
         console.log('clicked');
-        var newTerm = $('#new-button').val,
-            newCat = $('#new-category').text();
+        var newTerm = $('#new-button').val(),
+            newCat = $('#new-category').val();
         console.log(newTerm, newCat);
         newButton(newCat, newTerm);
     })
