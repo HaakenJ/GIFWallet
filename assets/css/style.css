@@ -28,6 +28,7 @@ body {
     background-color: #2b2b2b;
     color: #FFFFFF;
 }
+
 #dropdown-choice:hover {
     color: #2b2b2b;
     background-color: #1d94a7;
@@ -56,4 +57,30 @@ input {
 #sign-up-collapse {
     height: 0;
     display: none;
+}
+
+@media screen and (max-width: 575px) {
+    .lrg-buttons {
+        font-size: 0.75em;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 993px) {
+    #mobile-navbar {
+        display: none;
+    }
+
+    .sidebar {
+        display: block;
+    }
 }

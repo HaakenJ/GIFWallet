@@ -214,6 +214,7 @@ $(document).ready(() => {
     // Displays or hides the login form.
     $('#login').on('click', function () {
         if ($('#login-collapse').attr('data-toggle') === 'hidden') {
+            console.log('clicked');
             showLogin();
         } else {
             $('#login-collapse').hide();
@@ -224,6 +225,7 @@ $(document).ready(() => {
     // Displays or hides the sign-up form.
     $('#sign-up').on('click', function () {
         if ($('#sign-up-collapse').attr('data-toggle') === 'hidden') {
+            console.log('clicked');
             showSignUp();
         } else {
             $('#sign-up-collapse').hide();

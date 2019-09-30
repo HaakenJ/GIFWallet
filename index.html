@@ -14,57 +14,130 @@
 </head>
 
 <body>
+
+    <!--Jumbotron-->
     <div class="jumbotron jumbotron-fluid mb-0">
         <div class="container">
             <h1 class="display-1">GIF Wallet</h1>
             <p class="lead pt-3">Welcome to your own personal GIF Wallet!</p>
         </div>
     </div>
+
     <div id="divider"></div>
+
+    <!-- Navbar viewable on all screen sizes for GIF category selection. -->
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="#">GIF Categories</a>
+        <a class="navbar-brand">GIF Categories</a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Animals
                     </a>
                     <div class="dropdown-menu" id="animal-buttons" aria-labelledby="navbarDropdownMenuLink"></div>
                 </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Emotions
                     </a>
                     <div class="dropdown-menu" id="emotion-buttons" aria-labelledby="navbarDropdownMenuLink"></div>
                 </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Sports
                     </a>
                     <div class="dropdown-menu" id="sport-buttons" aria-labelledby="navbarDropdownMenuLink"></div>
                 </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         User Categories
                     </a>
                     <div class="dropdown-menu" id="personal-buttons" aria-labelledby="navbarDropdownMenuLink"></div>
                 </li>
-                <button class="btn btn-info" id="trending">Trending GIFs</button>
-                <button class="btn btn-info ml-2" id="random">Show a random GIF</button>
-                <button class="btn btn-info ml-2" id="saved-gifs">Saved Gifs</button>
+
+                <button class="btn btn-info m-1 lrg-buttons" id="trending">Trending GIFs</button>
+                <button class="btn btn-info m-1 lrg-buttons" id="random">Show a random GIF</button>
+                <button class="btn btn-info m-1 lrg-buttons" id="saved-gifs">Saved Gifs</button>
             </ul>
         </div>
     </nav>
 
+    <!--This nav bar of special options will only show on mobile displays that are too small for a sidebar-->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="mobile-navbar">
+        <a class="navbar-brand">Options</a>
 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobileNavDropdown"
+            aria-controls="mobileNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mobileNavDropdown">
+
+            <ul class="navbar-nav">
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link dropdown-toggle mobile-login-dropdown" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login Info
+                    </a>
+
+                    <div class="dropdown-menu" id="animal-buttons" aria-labelledby="navbarDropdownMenuLink">
+                        <button class="btn btn-info m-1 lrg-buttons" id="sign-up-mobile" type="button"
+                            data-toggle="collapse" data-target="#sign-up-collapse-mobile">Sign Up</button>
+                        <button class="btn btn-info m-1 lrg-buttons" id="login-mobile" type="button"
+                            data-toggle="collapse" data-target="#login-collapse-mobile">Login</button>
+                    </div>
+
+                    <div class="collapse" id="sign-up-collapse-mobile">
+                        <h4>Sign Up</h4>
+                        <input type="text" placeholder="Username" style="width: 100%"><br>
+                        <input type="text" placeholder="Password" style="width: 100%"><br>
+                        <input type="text" placeholder="Password again" style="width: 100%"><br>
+                    </div>
+
+                    <div class="collapse" id="login-collapse-mobile">
+                        <h4>Login</h4>
+                        <input type="text" placeholder="Username" style="width: 100%"><br>
+                        <input type="text" placeholder="Password" style="width: 100%"><br>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Add a Button
+                    </a>
+
+                    <div class="dropdown-menu" id="emotion-buttons" aria-labelledby="navbarDropdownMenuLink">
+
+                        <input type="text" id="new-button" name="new-button-text" placeholder="Enter a new search term"
+                            style="width: 100%"><br>
+
+                        <button class="btn btn-info mt-2 lrg-buttons" id="submit">Submit</button>
+                    </div>
+                </li>
+                <button class="btn btn-info mt-2 lrg-buttons" id="clear-local">Clear Personal Info</button>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- This container holds all GIFs and the desktop sidebar. -->
     <div class="container">
         <div class="row">
             <div class="col-9">
@@ -73,50 +146,59 @@
                 </div>
             </div>
 
-            <!--I plan to use this Sign-up and Login later when we learn how to use server side storage.-->
-            <div class="col-2 ml-5 p-5 sidebar">
+            <!--I plan to use the Sign-up and Login later when we learn how to use server side storage.-->
+            <!--This sidebar will only be viewable on desktop screens.-->
+            <div class="col-3 ml-5 p-5 sidebar">
                 <div class="row">
-                    <button class="btn btn-info m-1" id="sign-up">Sign Up</button>
-                    <button class="btn btn-info m-1" id="login">Login</button>
+                    <button class="btn btn-info m-1 lrg-buttons" id="sign-up">Sign Up</button>
+                    <button class="btn btn-info m-1 lrg-buttons" id="login">Login</button>
                 </div>
-                <div id="sign-up-collapse" data-toggle="hidden">
+
+                <div id="sign-up-collapse" class="m-1" data-toggle="hidden">
                     <h4>Sign Up</h4>
                     <input type="text" placeholder="Username" style="width: 100%"><br>
                     <input type="text" placeholder="Password" style="width: 100%"><br>
                     <input type="text" placeholder="Password again" style="width: 100%"><br>
                 </div>
+
                 <div id="login-collapse" data-toggle="hidden">
                     <h4>Login</h4>
                     <input type="text" placeholder="Username" style="width: 100%"><br>
                     <input type="text" placeholder="Password" style="width: 100%"><br>
                 </div>
 
-
                 <div class="row mt-5">
                     <h4>Add a button</h4>
                     <input type="text" id="new-button" name="new-button-text" placeholder="Enter a new search term"
                         style="width: 100%"><br>
-                    <button class="btn btn-info mt-2" id="submit">Submit</button>
-                    <button class="btn btn-info mt-2" id="clear-local">Clear Personal Info</button>
+                    <button class="btn btn-info m-1 lrg-buttons" id="submit">Submit</button>
+                </div>
+
+                <div class="row mt-5">
+                    <h4>Clear Saved Buttons and GIFs</h4>
+                    <button class="btn btn-info m-1 lrg-buttons" id="clear-local">Clear</button>
                 </div>
 
                 <div class="row mt-5">
                     <h4>Search Criteria</h4>
                     <div class="btn-group">
-                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"
+                        
+                        <button type="button" class="btn btn-info dropdown-toggle m-1 lrg-buttons" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             Number of Results
                         </button>
+
                         <div class="dropdown-menu">
-                            <a class="dropdown-item limit-dropdown"  id="dropdown-choice" value="5">5</a>
-                            <a class="dropdown-item limit-dropdown"  id="dropdown-choice" value="10">10</a>
-                            <a class="dropdown-item limit-dropdown"  id="dropdown-choice" value="15">15</a>
-                            <a class="dropdown-item limit-dropdown"  id="dropdown-choice" value="20">20</a>
+                            <a class="dropdown-item limit-dropdown" id="dropdown-choice" value="5">5</a>
+                            <a class="dropdown-item limit-dropdown" id="dropdown-choice" value="10">10</a>
+                            <a class="dropdown-item limit-dropdown" id="dropdown-choice" value="15">15</a>
+                            <a class="dropdown-item limit-dropdown" id="dropdown-choice" value="20">20</a>
                         </div>
                     </div>
+
                     <div class="btn-group">
-                        <button type="button" class="btn btn-info dropdown-toggle mt-2" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="btn btn-info dropdown-toggle m-1 lrg-buttons"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Rating
                         </button>
                         <div class="dropdown-menu">
