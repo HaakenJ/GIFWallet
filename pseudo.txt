@@ -36,3 +36,14 @@ When you are logged in, a 'Saved Gifs' button is in the top right where the
 
 When you click 'Saved Gifs' all of your previously saved GIFs are loaded onto 
     the screen.
+
+
+
+
+
+
+
+To have a username and password:
+
+- a user enters a new username and password
+- script checks 

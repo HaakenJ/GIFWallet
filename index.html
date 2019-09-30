@@ -37,15 +37,29 @@
                     <div id="gifs"></div>
                 </div>
             </div>
+
+            <!--I plan to use this section later when we learn how to use server side storage.-->
             <div class="col-2 ml-5">
                 <div class="row">
                     <button class="btn btn-info m-1" id="sign-up">Sign Up</button>
                     <button class="btn btn-info m-1" id="login">Login</button>
                 </div>
+                <div id="sign-up-collapse" data-toggle="hidden">
+                    <h4>Sign Up</h4>
+                    <input type="text" id="new-button" placeholder="Username" style="width: 100%"><br>
+                    <input type="text" id="new-button" placeholder="Password" style="width: 100%"><br>
+                    <input type="text" id="new-button" placeholder="Password again" style="width: 100%"><br>
+                </div>
+                <div id="login-collapse" data-toggle="hidden">
+                    <h4>Login</h4>
+                    <input type="text" id="new-button" placeholder="Username" style="width: 100%"><br>
+                    <input type="text" id="new-button" placeholder="Password" style="width: 100%"><br>
+                </div>
+
+
                 <div class="row mt-5">
                     <h4>Add a button</h4>
                     <input type="text" id="new-button" placeholder="Enter a new search term" style="width: 100%"><br>
-                    <!-- <input class="mt-2" type="text" id="new-category" placeholder="Enter a category" style="width: 100%"><br> -->
                     <button class="btn btn-info mt-2" id="submit">Submit</button>
                 </div>
             </div>
@@ -53,8 +67,16 @@
 
     </div>
 
+
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
     <script src="assets/javascript/app.js"></script>
 </body>
 

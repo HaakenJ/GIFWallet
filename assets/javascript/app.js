@@ -1,13 +1,17 @@
-/* TODO: Add functionality to the 'add a button' button.
+/* TODO:
     - Figure out how to remember users and create a user's gif page.
         - Will need a save button next to each gif
+
     - Figure out how to select multiple buttons to combine search terms
-    - Add drop down for number of results and rating
-    - List the gif's rating at the top of each gif, use it like a navbar with button groups
+
+    - Add drop down for number of results and rating, use it like a navbar with button groups
+
     - Make your list of buttons actually a drop down menu
+
     - Add a jumbotron with info about the page.
+
     - Add a theme of colors and text to the page.
-    - use .trim() with an user input to be defensive against a-holes.
+
     - Add progress or spinners using anime.js for when gifs are loading.*/
 
 
@@ -20,8 +24,15 @@ $(document).ready(() => {
         numOfResults = 10,
         rating = 'g',
         queryTerm = 'dog',
-        queryUrl = `http://api.giphy.com/v1/gifs/search?q=${queryTerm}&rating=${rating}&limit=${numOfResults}&api_key=${apiKey}`;
+        queryUrl = `http://api.giphy.com/v1/gifs/search?q=${queryTerm}&rating=${rating}&limit=${numOfResults}&api_key=${apiKey}`,
+        personalButtons;
 
+
+    if (localStorage.getItem(personalButtons) === null) {
+        personalButtons = [];
+    } else {
+        personalButtons = localStorage.getItem(personalButtons).split(';');
+    }
 
     function playAndPause() {
         var currentState = $(this).attr('data-state');
@@ -40,6 +51,12 @@ $(document).ready(() => {
         newBtn.attr('class', 'btn btn-info m-1 query-button');
         newBtn.text(term);
         $(newCat).append(newBtn);
+    }
+
+    if (personalButtons.length > 0) {
+        personalButtons.forEach((item) => {
+            newButton('personal', item);
+        })
     }
 
     animal.forEach((item) => {
@@ -62,7 +79,8 @@ $(document).ready(() => {
         }).then((response) => {
             response.data.forEach((item) => {
 
-                var newGif = $('<img>');
+                var newGif = $('<img>'),
+                    newDiv = $('<div>');
                 newGif.attr({
                     'src': item.images.fixed_height_still.url,
                     'alt': item.title,
@@ -70,15 +88,66 @@ $(document).ready(() => {
                     'data-still': item.images.fixed_height_still.url,
                     'data-animated': item.images.fixed_height.url
                 }).addClass('m-2 new-gif');
-                $('#gifs').append(newGif);
+                newDiv.addClass('float-left mt-2');
+                newDiv.append('<h6>Rating: ' + item.rating.toUpperCase() + '</h6>').append(newGif);
+
+
+                $('#gifs').append(newDiv);
             })
         })
     })
 
     $('.container').on('click', '.new-gif', playAndPause);
 
-    $('#submit').on('click', function() {
+    $('#submit').on('click', function () {
+        alert($('#new-button').val());
         var newTerm = $('#new-button').val();
+        console.log('New term is: ' + newTerm);
+        personalButtons.push(newTerm);
+        console.log(personalButtons);
+        localStorage.setItem(personalButtons, personalButtons);
         newButton('personal', newTerm);
     })
+
+    $('#login').on('click', function () {
+        if ($('#login-collapse').attr('data-toggle') === 'hidden') {
+            $('#sign-up-collapse').hide();
+            $('#sign-up-collapse').attr('data-toggle', 'hidden');
+            $('#login-collapse').show();
+            loginDisplayAnime.play();
+            $('#login-collapse').attr('data-toggle', 'displayed');
+        } else {
+            $('#login-collapse').hide();
+            $('#login-collapse').attr('data-toggle', 'hidden');
+        }
+    })
+    $('#sign-up').on('click', function () {
+        if ($('#sign-up-collapse').attr('data-toggle') === 'hidden') {
+            $('#login-collapse').hide();
+            $('#login-collapse').attr('data-toggle', 'hidden');
+            $('#sign-up-collapse').show();
+            signUpDisplayAnime.play();
+            $('#sign-up-collapse').attr('data-toggle', 'displayed');
+        } else {
+            $('#sign-up-collapse').hide();
+            $('#sign-up-collapse').attr('data-toggle', 'hidden');
+        }
+    })
+})
+
+let loginDisplayAnime = anime({
+    targets: '#login-collapse',
+    height: {
+        value: '+=100',
+        duration: 1000
+    },
+    autoplay: false
+})
+let signUpDisplayAnime = anime({
+    targets: '#sign-up-collapse',
+    height: {
+        value: '+=100',
+        duration: 1000
+    },
+    autoplay: false
 })
