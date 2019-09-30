@@ -14,7 +14,12 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-9" id="search-buttons">
+            <div class="col-9">
+                <div class="row">
+                    <button class="btn btn-info" id="trending">Trending GIFs</button>
+                    <button class="btn btn-info ml-2" id="random">Show a random GIF</button>
+                    <button class="btn btn-info ml-2" id="saved-gifs">Saved Gifs</button>
+                </div>
                 <div class="row">
                     <h4>Animal Buttons</h4>
                     <div id="animal-buttons">
@@ -46,21 +51,52 @@
                 </div>
                 <div id="sign-up-collapse" data-toggle="hidden">
                     <h4>Sign Up</h4>
-                    <input type="text" id="new-button" placeholder="Username" style="width: 100%"><br>
-                    <input type="text" id="new-button" placeholder="Password" style="width: 100%"><br>
-                    <input type="text" id="new-button" placeholder="Password again" style="width: 100%"><br>
+                    <input type="text" placeholder="Username" style="width: 100%"><br>
+                    <input type="text" placeholder="Password" style="width: 100%"><br>
+                    <input type="text" placeholder="Password again" style="width: 100%"><br>
                 </div>
                 <div id="login-collapse" data-toggle="hidden">
                     <h4>Login</h4>
-                    <input type="text" id="new-button" placeholder="Username" style="width: 100%"><br>
-                    <input type="text" id="new-button" placeholder="Password" style="width: 100%"><br>
+                    <input type="text" placeholder="Username" style="width: 100%"><br>
+                    <input type="text" placeholder="Password" style="width: 100%"><br>
                 </div>
 
 
                 <div class="row mt-5">
                     <h4>Add a button</h4>
-                    <input type="text" id="new-button" placeholder="Enter a new search term" style="width: 100%"><br>
+                    <input type="text" id="new-button" name="new-button-text" placeholder="Enter a new search term"
+                        style="width: 100%"><br>
                     <button class="btn btn-info mt-2" id="submit">Submit</button>
+                    <button class="btn btn-info mt-2" id="clear-local">Clear Personal Info</button>
+                </div>
+
+                <div class="row mt-5">
+                    <h4>Search Criteria</h4>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Number of Results
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item limit-dropdown" value="5">5</a>
+                            <a class="dropdown-item limit-dropdown" value="10">10</a>
+                            <a class="dropdown-item limit-dropdown" value="15">15</a>
+                            <a class="dropdown-item limit-dropdown" value="20">20</a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-info dropdown-toggle mt-2" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Rating
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item rating-dropdown" value="g">G</a>
+                            <a class="dropdown-item rating-dropdown" value="pg">PG</a>
+                            <a class="dropdown-item rating-dropdown" value="pg-13">PG-13</a>
+                            <a class="dropdown-item rating-dropdown" value="r">R</a>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
