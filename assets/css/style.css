@@ -1,9 +1,55 @@
-/* * {
-    border: 2px solid black;
-} */
+* {
+    color: #FFFFFF;
+}
+
+body {
+    background-image: url(../images/background.png.png);
+    font-family: 'Muli', sans-serif;
+}
+
+.jumbotron {
+    background-color: #2b2b2b;
+}
+
+.jumbotron .display-1 {
+    font-family: 'Lobster', cursive;
+}
+
+#divider {
+    background-color: #1d94a7;
+    height: 20px;
+}
+
+.navbar {
+    background-color: #2b2b2b;
+}
+
+.dropdown-menu {
+    background-color: #2b2b2b;
+    color: #FFFFFF;
+}
+#dropdown-choice:hover {
+    color: #2b2b2b;
+    background-color: #1d94a7;
+}
+
+.sidebar {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background-color: #2b2b2b;
+    overflow-x: hidden;
+}
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+  }
 
 input {
     border-radius: 4px;
+    color: #2b2b2b;
 }
 
 #login-collapse,

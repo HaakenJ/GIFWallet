@@ -1,10 +1,5 @@
 /* TODO:
-    - Figure out how to remember users and create a user's gif page.
-        - Will need a save button next to each gif
-
     - Figure out how to select multiple buttons to combine search terms
-
-    - Add drop down for number of results and rating, use it like a navbar with button groups
 
     - Make your list of buttons actually a drop down menu
 
@@ -98,7 +93,7 @@ $(document).ready(() => {
 
 
 
-    // DISPLAYING BUTTONS
+    // DISPLAY BUTTONS
 
     if (personalButtons.length > 0) {
         personalButtons.forEach((item) => {
@@ -142,7 +137,7 @@ $(document).ready(() => {
                 }).addClass('m-2 new-gif');
                 newDiv.addClass('float-left mt-2');
                 newDiv.append('<h6>Rating: ' + item.rating.toUpperCase() +
-                     '    <button id="save-button" type="button" class="btn btn-secondary btn-sm">Save</button></h6>');
+                    '    <button id="save-button" type="button" class="btn btn-secondary btn-sm">Save</button></h6>');
                 newDiv.append(newGif);
 
                 $('#gifs').append(newDiv);
@@ -170,14 +165,14 @@ $(document).ready(() => {
                 }).addClass('m-2 new-gif');
                 newDiv.addClass('float-left mt-2');
                 newDiv.append('<h6>Rating: ' + item.rating.toUpperCase() +
-                     '    <button id="save-button" type="button" class="btn btn-secondary btn-sm">Save</button></h6>');
+                    '    <button id="save-button" type="button" class="btn btn-secondary btn-sm">Save</button></h6>');
                 newDiv.append(newGif);
 
                 $('#gifs').append(newDiv);
             })
         })
     })
-    
+
     //Show random GIF.
     $('#random').on('click', function () {
         queryUrl = `http://api.giphy.com/v1/gifs/random?api_key=${apiKey}&rating=${rating}`;
@@ -196,8 +191,8 @@ $(document).ready(() => {
                 'data-animated': response.data.images.fixed_height.url
             }).addClass('m-2 new-gif');
             newDiv.addClass('float-left mt-2');
-                newDiv.append('<h6><button id="save-button" type="button" class="btn btn-secondary btn-sm">Save</button></h6>');
-                newDiv.append(newGif);
+            newDiv.append('<h6><button id="save-button" type="button" class="btn btn-secondary btn-sm">Save</button></h6>');
+            newDiv.append(newGif);
             newDiv.append(newGif);
 
             $('#gifs').append(newDiv);
@@ -236,10 +231,12 @@ $(document).ready(() => {
         }
     })
 
-    // Clear personal buttons.
+    // Clear personal info; i.e. buttons and saved GIFs.
     $('#clear-local').on('click', function () {
         localStorage.clear();
         $('#personal-buttons').empty();
+        savedGifs = [];
+        personalButtons = [];
     });
 
     // Set the number of return results based on the clicked dropdown item.
@@ -249,9 +246,9 @@ $(document).ready(() => {
     $('.rating-dropdown').on('click', setRating);
 
     // Save a gif to the user's local storage.
-    $(document.body).on('click', '#save-button', function() {
+    $(document.body).on('click', '#save-button', function () {
         var savedImage = $(this).parent().siblings(),
-        dataObj = {};
+            dataObj = {};
         dataObj['src'] = savedImage.attr('src');
         dataObj['alt'] = savedImage.attr('alt');
         dataObj['data-still'] = savedImage.attr('data-still');
@@ -264,22 +261,24 @@ $(document).ready(() => {
     })
 
     // Show saved GIFs.
-    $('#saved-gifs').on('click', function() {
+    $('#saved-gifs').on('click', function () {
         $('#gifs').empty();
-        savedGifs.forEach((item) => {
-            var newGif = $('<img>'),
-                newDiv = $('<div>');
-            newGif.attr({
-                'src': item.src,
-                'alt': item.alt,
-                'data-state': item['data-state'],
-                'data-still': item['data-still'],
-                'data-animated': item['data-animated']
-            }).addClass('m-2 new-gif');
-            newDiv.addClass('float-left mt-2');
-            newDiv.append(newGif);
-            $('#gifs').append(newDiv);
-        })
+        if (savedGifs.length > 0) {
+            savedGifs.forEach((item) => {
+                var newGif = $('<img>'),
+                    newDiv = $('<div>');
+                newGif.attr({
+                    'src': item.src,
+                    'alt': item.alt,
+                    'data-state': item['data-state'],
+                    'data-still': item['data-still'],
+                    'data-animated': item['data-animated']
+                }).addClass('m-2 new-gif');
+                newDiv.addClass('float-left mt-2');
+                newDiv.append(newGif);
+                $('#gifs').append(newDiv);
+            })
+        }
     })
 })
 
