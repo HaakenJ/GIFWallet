@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to your GIF Wallet!</title>
+    <title>Welcome to GIF Wallet!</title>
+
+    <!-- bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lobster|Muli&display=swap" rel="stylesheet">
-
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -126,10 +131,10 @@
 
                     <div class="dropdown-menu" id="emotion-buttons" aria-labelledby="navbarDropdownMenuLink">
 
-                        <input type="text" id="new-button" name="new-button-text" placeholder="Enter a new search term"
-                            style="width: 100%"><br>
+                        <input type="text" id="new-button-mobile" name="new-button-text"
+                            placeholder="Enter a new search term" style="width: 100%"><br>
 
-                        <button class="btn btn-info mt-2 lrg-buttons" id="submit">Submit</button>
+                        <button class="btn btn-info mt-2 lrg-buttons" id="submit-mobile">Submit</button>
                     </div>
                 </li>
                 <button class="btn btn-info mt-2 lrg-buttons" id="clear-local">Clear Personal Info</button>
@@ -182,9 +187,9 @@
                 <div class="row mt-5">
                     <h4>Search Criteria</h4>
                     <div class="btn-group">
-                        
-                        <button type="button" class="btn btn-info dropdown-toggle m-1 lrg-buttons" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+
+                        <button type="button" class="btn btn-info dropdown-toggle m-1 lrg-buttons"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Number of Results
                         </button>
 
@@ -215,16 +220,20 @@
 
     </div>
 
-
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <!-- popper.js for bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <!-- anime.js -->
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+    <!-- app file -->
     <script src="assets/javascript/app.js"></script>
 </body>
 

@@ -1,12 +1,6 @@
 /* TODO:
     - Figure out how to select multiple buttons to combine search terms
 
-    - Make your list of buttons actually a drop down menu
-
-    - Add a jumbotron with info about the page.
-
-    - Add a theme of colors and text to the page.
-
     - Add progress or spinners using anime.js for when gifs are loading.*/
 
 
@@ -209,6 +203,15 @@ $(document).ready(() => {
         localStorage.setItem('personalButtons', personalButtons);
         newButton('personal', newTerm);
         $('#new-button').val('');
+    })
+
+    // Same function as above but for the mobile nav.
+    $('#submit-mobile').on('click', function () {
+        var newTerm = $('#new-button-mobile').val();
+        personalButtons.push(newTerm);
+        localStorage.setItem('personalButtons', personalButtons);
+        newButton('personal', newTerm);
+        $('#new-button-mobile').val('');
     })
 
     // Displays or hides the login form.
