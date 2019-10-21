@@ -45,13 +45,13 @@ $(document).ready(() => {
     // Creates a url to pass into an ajax call.  Has optional parameters with defaults.
     function createUrl(type, rating = 'g', limit = '10', term = '', key = 'ARmBnNtTextf5564MTzhpY9zyTYN6Pde') {
         if (type === 'query') {
-            return `http://api.giphy.com/v1/gifs/search?api_key=${key}&q=${term}&
+            return `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${term}&
             rating=${rating}&limit=${limit}`
         } else if (type === 'trending') {
-            return `http://api.giphy.com/v1/gifs/trending?api_key=${key}&
+            return `https://api.giphy.com/v1/gifs/trending?api_key=${key}&
             rating=${rating}&limit=${limit}`
         } else if (type === 'random') {
-            return `http://api.giphy.com/v1/gifs/random?api_key=${key}&
+            return `https://api.giphy.com/v1/gifs/random?api_key=${key}&
             rating=${rating}`
         } else {
             throw "not a valid endpoint type";
